@@ -1,0 +1,22 @@
+</div></div></div>
+	</div>
+</div>
+<script type="text/javascript" src="../../../assets/vendor/jquery/jquery.js"></script>
+<script src="../../../assets/vendor/html-excel/src/jquery.table2excel.js"></script>
+<script type="text/javascript" src="assets/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/vendor/datatables-responsive/dataTables.responsive.js"></script>
+	<script>
+			$(function() {
+				$(".table2excel").table2excel({
+					exclude: ".noExl",
+					name: "Excel Document Name",
+					filename: "myFileName",
+					fileext: ".xls",
+					exclude_img: true,
+					exclude_links: true,
+					exclude_inputs: true
+				});
+			});
+		</script>
+	</body>
+</html>

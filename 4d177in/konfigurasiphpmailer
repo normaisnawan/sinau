@@ -1,0 +1,30 @@
+<?php
+   require("PHPMailerAutoload.php"); // path to the PHPMailerAutoload.php file.
+ 
+   $mail = new PHPMailer();
+   $mail->IsSMTP();
+   $mail->Mailer = "smtp";
+   $mail->Host = "xgra.phapros.co.id";
+   $mail->Port = "25"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
+   $mail->SMTPAuth = true;
+   $mail->SMTPSecure = 'tls';
+   $mail->Username = "";
+   $mail->Password = "smtp_password";
+    
+   $mail->From     = "sender@example.com";
+   $mail->FromName = "Susan Sender";
+   $mail->AddAddress("recipient@example.com", "Rachel Recipient");
+   $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
+ 
+   $mail->Subject  = "Hi!";
+   $mail->Body     = "Hi! How are you?";
+   $mail->WordWrap = 50;  
+ 
+   if(!$mail->Send()) {
+		echo 'Message was not sent.';
+		echo 'Mailer error: ' . $mail->ErrorInfo;
+		exit;
+   } else {
+		echo 'Message has been sent.';
+   }
+?>
